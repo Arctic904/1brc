@@ -20,14 +20,6 @@ time cargo run --release --features generator --bin generate 1000000000
 $ cargo build --release && time target/release/1brc >/dev/null
    Compiling one-billion-rows v0.1.0 (1brc)
     Finished release [optimized] target(s) in 0.62s
-
-real    0m9.737s
-user    1m15.772s
-sys     0m1.607s
 ```
 
-## Optional Features
-
-While the text of the challenge instructs us to use only the standard library, it's fun trying to eke out some extra performance by adding some dependencies.
-
-- `fxhash`: replaces the hash algorithm with a non-cryptographically-safe one which is approximately 1.2x quicker
+Generate copied from https://github.com/coriolinus/1brc/
