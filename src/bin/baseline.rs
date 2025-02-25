@@ -70,12 +70,12 @@ fn main() -> std::io::Result<()> {
         }
         contents.clear();
     }
-    let file = std::fs::File::create("output.txt").expect("opening output file for write");
+    let file = std::fs::File::create("baseline_output.txt").expect("opening output file for write");
     let mut buf = std::io::BufWriter::new(file);
     write!(buf, "{}", station_list)
 }
 
-fn parse_entry(value: &String, size: usize, station_list: &mut HashMap<String, Station>) {
+fn parse_entry<'a>(value: &String, size: usize, station_list: &mut HashMap<String, Station>) {
     let temp = value.rfind(';').unwrap();
     let temp2 = value.rfind('\n').unwrap();
     let entry = Entry {

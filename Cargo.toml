@@ -18,5 +18,8 @@ name = "generate"
 required-features = ["generator"]
 
 [[bin]]
+name = "baseline"
+
+[[bin]]
 name = "1brc"
 path = "src/main.rs"
