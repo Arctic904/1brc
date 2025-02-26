@@ -4,7 +4,7 @@ use std::{
     str::FromStr,
 };
 
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd)]
+#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Eq, Ord)]
 pub struct Value(i32); // Store 12.3 as 123
 
 impl Value {
@@ -24,7 +24,7 @@ impl FromStr for Value {
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let val = s.parse::<f64>();
         if let Ok(v) = val {
-            Ok(Value((v * 10.0) as i32))
+            Ok(Value((v) as i32))
         } else {
             Err(format!("{} is not a valid number", s))
         }
